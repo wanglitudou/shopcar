@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta name="format-detection" content="telphone=no, email=no">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="fonts/iconfont.css">
+	<link rel="stylesheet" href="css/swiper-3.3.1.min.css">
+</head>
+
+<body>
+	<div class="swiper-wrapper box">
+		<mfq-header :title="'我的购物车'">我的购11物车</mfq-header>
+		<section class="section">
+			<div class="center">
+				<mfq-hospital  v-for="(x,i) in $store.state.hospital_list" :kay="i" :index="i" :name="x.name" :selectall="x.selected_all" :medical_list="x.medical_list">
+                			 
+				</mfq-hospital>
+				<!-- <mfq-medical></<mfq-medical> -->
+				
+		</div>
+		</section>
+
+		<mfq-footer>{{$store.state.total_price}}</mfq-footer>
+	</div>
+	<!-- <script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/zepto.js"></script>
+	<script src="js/event.js"></script>
+	<script src="js/ajax.js"></script> -->
+	<script src="js/axios.js"></script>
+	<script src="lib/vue.js"></script>
+	<script src="lib/vuex.js"></script>
+	<script src="components/header.js"></script>
+	<script src="components/footer.js"></script>
+	<script src="components/medical.js"></script>
+	<script src="components/hospital.js"></script>
+	<script src="directive/directive.js"></script>
+	<script src="store/store.js"></script>
+
+	<script>
+		new Vue({
+			data: {
+				list_data: [],
+				total_price:0
+				
+			},
+			store:store,
+			created: function () {
+				// this.axios.get('./server/data.json').then(function(res){
+				// 	console.log(res.data);
+				// })
+			    this.$store.dispatch('fetch_hospital_list')
+			},
+			methods:{
+				
+			}
+		}).$mount('.box')
+	</script>
+</body>
+
+</html>

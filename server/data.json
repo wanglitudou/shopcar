@@ -1,0 +1,32 @@
+{
+    "success":1,
+    "hospital-list":[
+        {
+            "name":"北京中关村整形医院",
+            "selected_all":false,
+            "medical_list":[
+                
+                {
+                    "medical":"厚唇",
+                    "price":5000,
+                    "checked":false,
+                    "count":1
+                },
+                {
+                    "medical":"双眼皮",
+                    "price":15000,
+                    "checked":false,
+                    "count":1
+                },  
+                {
+                    "medical":"双眼皮",
+                    "price":15000,
+                    "checked":false,
+                    "count":1
+                } 
+                 
+            ]
+        }
+        
+    ]
+}
